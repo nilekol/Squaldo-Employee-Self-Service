@@ -56,20 +56,22 @@ app.get('/employee', async (req, res) => {
 // Route to handle login
 app.post('/login', async (req, res) => {
     try {
-      console.log('Login request received:', req.body); // Log the request body
       const { email, password } = req.body;
       const employee = await Employee.findOne({ email });
       if (!employee || employee.password !== password) {
-        console.log('Invalid email or password'); // Log invalid login attempt
         return res.status(404).send({ message: "Invalid email or password" });
       }
-      console.log('Login successful'); // Log successful login
-      return res.status(200).send({ message: "Login successful", status: "exist" });
+      // Assuming employee has 'name', 'email', and other fields
+      return res.status(200).send({ 
+        message: "Login successful", 
+        status: "exist", 
+        user: employee
+      });
     } catch (error) {
-      console.error('Error during login:', error); // Log any errors
       return res.status(500).send({ error: error.message });
     }
   });
+  
   
 
 // Connect to MongoDB and start the server

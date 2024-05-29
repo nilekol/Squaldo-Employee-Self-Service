@@ -4,22 +4,20 @@ import Login from './pages/Login'
 import Home from './pages/Home'
 import Picker from './components/Picker'
 import WelcomeBar from './components/WelcomeBar'
+import { UserProvider } from '/UserContext'
 
 const App = () => {
   return (
     <div className="App">
       
-      <WelcomeBar/>
-      <Picker/>
-      
-      {/**
+      <UserProvider>
        <Router>
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/home" element={<Home />} />
         </Routes>
       </Router>
-    */}
+      </UserProvider>
       
       
       

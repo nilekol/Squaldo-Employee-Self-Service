@@ -11,23 +11,23 @@ const employeeSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Email is required'],
         unique: true,
-        match: [/\S+@\S+\.\S+/, 'Please enter a valid email']
+        //match: [/\S+@\S+\.\S+/, 'Please enter a valid email']
     },
 
     password: {
         type: String,
         required: [true, 'Password is required'],
-        minlength: [6, 'Password must be at least 6 characters']
+        //minlength: [6, 'Password must be at least 6 characters']
     },
     age: {
         type: Number,
         required: [true, 'Age is required'],
-        min: [18, 'Age must be at least 18']
+        //min: [18, 'Age must be at least 18']
     },
     hourlyPay: {
         type: Number,
         required: [true, 'Hourly pay is required'],
-        min: [0, 'Hourly pay must be positive']
+        //min: [0, 'Hourly pay must be positive']
     },
 });
 
