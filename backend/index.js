@@ -20,8 +20,8 @@ app.get("/", (req, res) => {
 // Route to create a new employee
 app.post('/employee', async (req, res) => {
     try {
-        const { name, email, password, age, hourlyPay } = req.body;
-        if (!name || !email || !password || !age || !hourlyPay) {
+        const { name, email, password, age, hourlyPay, storeNumber, position} = req.body;
+        if (!name || !email || !password || !position) {
             return res.status(400).send({ message: "Please provide all required fields" });
         }
 
@@ -30,7 +30,9 @@ app.post('/employee', async (req, res) => {
             email,
             password, // Assuming you need to store the password as well
             age,
-            hourlyPay
+            hourlyPay,
+            storeNumber,
+            position
         };
 
         const result = await Employee.create(newEmployee);

@@ -5,6 +5,8 @@ import Home from './pages/Home'
 import Picker from './components/Picker'
 import WelcomeBar from './components/WelcomeBar'
 import { UserProvider } from '/UserContext'
+import AdminMode from './pages/AdminMode'
+import GMMode from './pages/GMMode'
 
 const App = () => {
   return (
@@ -15,6 +17,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/admin_mode" element={<AdminMode />} />
+          <Route path="/gm_mode" element={<GMMode />} />
+
         </Routes>
       </Router>
       </UserProvider>

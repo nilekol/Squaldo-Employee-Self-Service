@@ -11,14 +11,11 @@ const WelcomeBar = () => {
 
   return (
     
-
-    
-    
     <nav className="navbar">
       <h1>Welcome <a className="welcome">{user.name}</a></h1>
       <ul>
         <li>{month} {day}</li>
-        <li>Store {user.storeNumber}</li>
+        <li>{user.storeNumber ? "Store " + user.storeNumber : ""}</li>
         <li><a href="/">Logout</a></li>
         <li><img src={wawaLogo} className="wawa_logo" alt="Wawa Logo" /></li>
       </ul>
